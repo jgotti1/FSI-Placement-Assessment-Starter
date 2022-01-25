@@ -44,6 +44,7 @@ ccPlusBtn.addEventListener('click', function() {
 })
 
 // Event listener for clicks on the "-"  buttons for All cookies
+
 gbMinusBtn.addEventListener('click', function() {
     gb = gb - 1;
     if (gb < 0) gb=0
@@ -51,15 +52,17 @@ gbMinusBtn.addEventListener('click', function() {
     document.querySelector('#qty-gb').textContent = gb;
 
 })
-sugarPlusBtn.addEventListener('click', function() {
-    sugar = sugar + 1;
+sugarMinusBtn.addEventListener('click', function() {
+    sugar = sugar - 1;
+    if (sugar < 0) sugar = 0
     document.querySelector('#qty-total').textContent = gb + cc + sugar;
     document.querySelector('#qty-sugar').textContent = sugar;
 
 })
 
-ccPlusBtn.addEventListener('click', function() {
-    cc = cc + 1;
+ccMinusBtn.addEventListener('click', function() {
+    cc = cc - 1;
+    if (cc < 0) cc=0;
     document.querySelector('#qty-total').textContent = gb + cc + sugar;
     document.querySelector('#qty-cc').textContent = cc;
 
