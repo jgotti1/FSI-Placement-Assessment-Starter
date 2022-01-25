@@ -1,27 +1,66 @@
 // HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
+// console.log('JavaScript code has loaded!')
 // First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
+let yourName = "John Margotti" // HINT: Replace this with your own name!
+
+// selecting the element with an id of credit
+let credit = document.querySelector('#credit')
+
+// Code to update name display
+document.querySelector('#credit').textContent =  `Created by ${yourName}`;
 
 // We'll use these variables to track the counts of each cookie type
 let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
 
-// selecting the element with an id of credit
-const credit = document.querySelector('#credit')
-// selecting the element with an id of add-gb
-const gbPlusBtn = document.querySelector('#add-gb')
+// selecting the element with an id of add and minus for all
+let gbPlusBtn = document.querySelector('#add-gb')
+let gbMinusBtn = document.querySelector('#minus-gb')
+let ccPlusBtn = document.querySelector('#add-cc')
+let ccMinusBtn = document.querySelector('#minus-cc')
+let sugarPlusBtn = document.querySelector('#add-sugar')
+let sugarMinusBtn = document.querySelector('#minus-sugar')
 
-// Code to update name display
-credit.textContent = `Created by ${yourName}`
-
-// Event listener for clicks on the "+" button for Gingerbread cookies
+// Event listener for clicks on the "+"  buttons for All cookies
 gbPlusBtn.addEventListener('click', function() {
-// HINT: You can delete this console.log after you no longer need it!
-console.log('Gingerbread + button was clicked!')
+    gb = gb + 1;
+    document.querySelector('#qty-total').textContent = gb + cc + sugar;
+    document.querySelector('#qty-gb').textContent = gb;
 
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+})
+sugarPlusBtn.addEventListener('click', function() {
+    sugar = sugar + 1;
+    document.querySelector('#qty-total').textContent = gb + cc + sugar;
+    document.querySelector('#qty-sugar').textContent = sugar;
+
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+ccPlusBtn.addEventListener('click', function() {
+    cc = cc + 1;
+    document.querySelector('#qty-total').textContent = gb + cc + sugar;
+    document.querySelector('#qty-cc').textContent = cc;
+
+})
+
+// Event listener for clicks on the "-"  buttons for All cookies
+gbMinusBtn.addEventListener('click', function() {
+    gb = gb - 1;
+    if (gb < 0) gb=0
+    document.querySelector('#qty-total').textContent = gb + cc + sugar;
+    document.querySelector('#qty-gb').textContent = gb;
+
+})
+sugarPlusBtn.addEventListener('click', function() {
+    sugar = sugar + 1;
+    document.querySelector('#qty-total').textContent = gb + cc + sugar;
+    document.querySelector('#qty-sugar').textContent = sugar;
+
+})
+
+ccPlusBtn.addEventListener('click', function() {
+    cc = cc + 1;
+    document.querySelector('#qty-total').textContent = gb + cc + sugar;
+    document.querySelector('#qty-cc').textContent = cc;
+
+})
