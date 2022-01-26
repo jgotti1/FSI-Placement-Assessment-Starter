@@ -1,4 +1,3 @@
-// HINT: You can delete this console.log after you no longer need it!
 // First, tell us your name
 let yourName = "John Margotti" // HINT: Replace this with your own name!
 
