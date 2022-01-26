@@ -41,7 +41,7 @@ ccPlusBtn.addEventListener('click', function() {
 
 })
 
-// Event listener for clicks on the "-"  buttons for All cookies
+//  Event listener for clicks on the "-"  buttons for All cookies
 
 gbMinusBtn.addEventListener('click', function() {
     gb = gb - 1;
